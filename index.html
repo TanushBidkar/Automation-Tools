@@ -273,6 +273,11 @@
                 <h3>HDFC Bank</h3>
                 <p>Housing Development Finance Corp.</p>
             </div>
+            <div class="glass-card" onclick="openTools('Kotak')">
+                <div class="client-icon">🏦</div>
+                <h3>Kotak Mahindra Bank</h3>
+                <p>Kotak Mahindra Bank Limited</p>
+            </div>
 
             
 
@@ -294,11 +299,7 @@
                 <p>Health & Fitness Platform</p>
             </div>
 
-            <div class="glass-card" onclick="showMaintenance()">
-                <div class="client-icon">🏦</div>
-                <h3>Kotak Mahindra Bank</h3>
-                <p>Kotak Mahindra Bank Limited</p>
-            </div>
+            
 
             <div class="glass-card" onclick="showMaintenance()">
                 <div class="client-icon">📈</div>
@@ -440,6 +441,43 @@
         </div>
     </div>
 
+    <div id="kotakTools" class="container page-section">
+    <button class="back-btn" onclick="backToClients()"><i class="ri-arrow-left-line"></i> Back to Clients</button>
+    
+    <div class="header">
+        <h1>Kotak Mahindra Automation Suite</h1>
+        <p>Kotak Bank Enterprise Tools</p>
+    </div>
+
+    <div class="hero-features">
+        <div class="feature-box"><i class="ri-lock-password-fill feature-icon-lg icon-lock"></i><h4>Enterprise Security</h4><p>Bank-grade encryption</p></div>
+        <div class="feature-box"><i class="ri-flashlight-fill feature-icon-lg icon-bolt"></i><h4>High Performance</h4><p>Fast processing</p></div>
+        <div class="feature-box"><i class="ri-bar-chart-grouped-fill feature-icon-lg icon-chart"></i><h4>Analytics</h4><p>Deep insights</p></div>
+        <div class="feature-box"><i class="ri-refresh-line feature-icon-lg icon-sync"></i><h4>Real-time Sync</h4><p>Instant updates</p></div>
+    </div>
+
+    <div class="grid-container">
+        <div class="glass-card tool-card">
+            <i class="ri-map-pin-time-fill client-icon" style="color: #f472b6;"></i>
+            <h3>4-Visit Tracker</h3>
+            <p>Intelligent multi-visit tracking system. Consolidates visit data into structured Excel reports.</p>
+            <button class="cta-btn" onclick="window.location.href='https://kotak-site-progress-report-nqdu.onrender.com/'">Launch Tool</button>
+        </div>
+        <div class="glass-card tool-card">
+            <i class="ri-file-word-2-fill client-icon" style="color: #60a5fa;"></i>
+            <h3>Word Report Automation</h3>
+            <p>Upload measurement sheets and generate professionally formatted Word reports instantly.</p>
+            <button class="cta-btn" onclick="showMaintenance()">Launch Tool</button>
+        </div>
+        <div class="glass-card tool-card">
+            <i class="ri-file-excel-2-fill client-icon" style="color: #34d399;"></i>
+            <h3>COP Generator</h3>
+            <p>Automate Certificate of Payment generation designed specifically for Kotak compliance.</p>
+            <button class="cta-btn" onclick="showMaintenance()">Launch Tool</button>
+        </div>
+    </div>
+</div>
+
     <div id="maintenanceModal" class="modal">
         <div class="modal-content">
             <i class="ri-tools-fill" style="font-size: 50px; color: #a5b4fc; margin-bottom: 20px;"></i>
@@ -465,6 +503,18 @@
             }
             window.scrollTo(0,0);
         }
+        function openTools(client) {
+    document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
+    
+    if (client === 'HDFC') {
+        document.getElementById('hdfcTools').classList.add('active');
+    } else if (client === 'ICICI') {
+        document.getElementById('iciciTools').classList.add('active');
+    } else if (client === 'Kotak') {
+        document.getElementById('kotakTools').classList.add('active');
+    }
+    window.scrollTo(0,0);
+}
 
         function backToClients() {
             document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
